@@ -1,6 +1,6 @@
 # Nextjs-React-Redux-Example
 
-A Simple Counter App made with next.js, react and redux. 
+next.js + redux + redux-thunk异步请求的例子 
 
 To run the app:
 

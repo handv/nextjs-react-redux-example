@@ -1,4 +1,8 @@
-import {DECREMENT_COUNTER, INCREMENT_COUNTER} from '../actions/counterActions';
+import {
+  DECREMENT_COUNTER,
+  INCREMENT_COUNTER,
+  FETCH_PRACTICE_DATA,
+} from '../actions/counterActions'
 
 const counterReducer = (state = {value: 0}, action) => {
     switch (action.type) {
@@ -6,6 +10,8 @@ const counterReducer = (state = {value: 0}, action) => {
             return {...state, value: state.value + 1};
         case DECREMENT_COUNTER:
             return {...state, value: state.value - 1};
+        case FETCH_PRACTICE_DATA:
+            return {...state, data: action.data}
         default:
             return {...state};
     }
