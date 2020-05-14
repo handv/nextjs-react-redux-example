@@ -1,3 +1,4 @@
+import axios from 'axios'
 //Action Types
 export const INCREMENT_COUNTER = 'INCREMENT_COUNTER'
 export const DECREMENT_COUNTER = 'DECREMENT_COUNTER'
@@ -18,8 +19,6 @@ export const fetchPracticeDataEnd = (data) => ({
 })
 
 export const fetchPracticeData = () => async (dispatch) => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/users')
-  console.log(res)
-  const json = await res.json()
-  return dispatch(fetchPracticeDataEnd(json))
+  const res = await axios.get('https://jsonplaceholder.typicode.com/users')
+  return dispatch(fetchPracticeDataEnd(res && res.data))
 }
